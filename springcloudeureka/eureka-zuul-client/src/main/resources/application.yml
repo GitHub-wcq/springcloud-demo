@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+server:
+  port: 8301
+
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    hiapi:
+      path: /hiapi/**             #将以 hipai 开头的url路由到 eureka-client服务
+      serviceId: eureka-client   #通过serviceId的形式路由到服务上
+    #      url: http://localhost:8101  #通过指定固定路径的形式路由到服务上
+    ribbonapi:
+      path: /ribbonapi/**
+      serviceId: eureka-ribbon-client
+    feignapi:
+      path: /feignapi/**
+      serviceId: eureka-feign-client
+  prefix: /v1

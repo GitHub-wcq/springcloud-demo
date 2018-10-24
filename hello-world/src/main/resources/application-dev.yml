@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 第一次建表，后面用update
+    show-sql: true
+
+  redis:
+    host: localhost
+    port: 6379
+    database: 1
+
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500

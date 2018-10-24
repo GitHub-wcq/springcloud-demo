@@ -1,0 +1,18 @@
+server:
+  port: 9769
+spring:
+  application:
+    name: service-turbine
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: eureka-client-two,admin-client-one
+  cluster-name-expression: new String("default")
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+management:
+  security:
+    enabled: false

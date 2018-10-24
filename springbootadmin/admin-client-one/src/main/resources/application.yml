@@ -1,0 +1,15 @@
+server:
+  port: 8672
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+spring:
+  application:
+    name: admin-client-one
+logging:
+  file: "logs/admin-client-one.log"
+management:
+  security:
+    enabled: false

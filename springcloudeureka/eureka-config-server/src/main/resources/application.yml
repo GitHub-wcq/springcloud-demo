@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:  classpath:/shared
+  profiles:
+    active: native
+#      server:
+#        git:
+#          uri:  https://github.com/GitHub-wcq/2017-12-29-
+#          username: GitHub-wcq
+#          password: Ww541293
+#          default-label: master
+
+  application:
+    name: config-server
+server:
+  port: 8403
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8001/eureka/

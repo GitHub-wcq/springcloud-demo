@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hello-world
+  profiles:
+    active: dev
+
+
+my:
+  name: wcq
+  age: 25
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  greeting: hi, i'm ${my.name}
+
